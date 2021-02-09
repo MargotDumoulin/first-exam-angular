@@ -11,7 +11,7 @@ export class ChampionsService {
 
   private champions: Champion[];
   private validationRules: any = {
-    age: (e) => isNaN(e) || e === null || e === '' || e < 0,
+    age: (e) => isNaN(e) || e === null || e === '' || e <= 0,
     image: (e) => e === null || e === '',
     isWomen: (e) => e === null || e === undefined,
     passive: (e) => e === null || e === '',

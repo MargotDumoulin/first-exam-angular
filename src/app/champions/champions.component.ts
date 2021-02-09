@@ -19,4 +19,12 @@ export class ChampionsComponent implements OnInit {
     this.Champions.delete(id);
   }
 
+  truncateIfTooLong(str: string, limit: number) {
+    if (str.length > limit) {
+      return str.substring(0, limit - 1) + '…';
+    } else {
+      return str;
+    }
+  }
+
 }

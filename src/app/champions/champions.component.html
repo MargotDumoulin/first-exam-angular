@@ -16,16 +16,16 @@
   </thead>
   <tbody>
     <tr *ngFor="let champion of champions">
-      <th scope="row">{{ champion.id }}</th>
+      <th scope="row">{{ champion.id  }}</th>
       <td><img [src]="champion.image" class="champion-image" /></td>
-      <td>{{ champion.name }}</td>
+      <td>{{ truncateIfTooLong(champion.name, 20) }}</td>
       <td>{{ champion.age }}</td>
       <td>{{ champion.isWomen ? "Femme" : "Homme" }}</td>
-      <td>{{ champion.passive }}</td>
-      <td>{{ champion.skillQ }}</td>
-      <td>{{ champion.skillW }}</td>
-      <td>{{ champion.skillE }}</td>
-      <td>{{ champion.skillR }}</td>
+      <td>{{ truncateIfTooLong(champion.passive, 20) }}</td>
+      <td>{{ truncateIfTooLong(champion.skillQ, 20) }}</td>
+      <td>{{ truncateIfTooLong(champion.skillW, 20) }}</td>
+      <td>{{ truncateIfTooLong(champion.skillE, 20) }}</td>
+      <td>{{ truncateIfTooLong(champion.skillR, 20) }}</td>
       <td>
         <button [routerLink]="['/update', champion.id]" type="button" class="btn btn-info icon-btn">
           <i class="bi bi-pen"></i>
