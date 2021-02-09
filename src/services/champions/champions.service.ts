@@ -9,7 +9,7 @@ import { Champion } from 'types';
 })
 export class ChampionsService {
 
-  private champions: any;
+  private champions: Champion[];
   private validationRules: any = {
     age: (e) => isNaN(e) || e === null || e === '' || e < 0,
     image: (e) => e === null || e === '',
@@ -30,7 +30,7 @@ export class ChampionsService {
   }
 
   emitChampionsSubject() {
-    this.championsSubject.next(this.champions.slice());
+    this.championsSubject.next([ ...this.champions ]);
   }
 
   getUserById(id: number) {
