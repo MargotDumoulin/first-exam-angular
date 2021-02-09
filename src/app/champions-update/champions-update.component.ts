@@ -14,7 +14,6 @@ export class ChampionsUpdateComponent implements OnInit {
   errors: any = {};
   errorsLength = 0;
   champion: Champion;
-  id: number;
   change: boolean;
 
   constructor(private Champions: ChampionsService, private route: ActivatedRoute, private router: Router) { }
