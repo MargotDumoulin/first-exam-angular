@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChampionsService } from 'src/services/champions/champions.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Champion } from 'types';
 
 @Component({
   selector: 'app-champions-update',
@@ -11,7 +12,7 @@ export class ChampionsUpdateComponent implements OnInit {
 
   errors: any = {};
   errorsLength = 0;
-  champion: any;
+  champion: Champion;
   id: number;
   change: boolean;
   rules: any = {

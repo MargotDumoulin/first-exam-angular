@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Champion } from 'types';
 
 @Component({
   selector: 'app-champions-form',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChampionsFormComponent implements OnInit {
 
-  @Input() champion: any = {};
+  @Input() champion: Champion;
   @Input() errors: any = {};
 
   constructor() { }

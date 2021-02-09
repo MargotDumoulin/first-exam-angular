@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { map } from 'rxjs/operators';
+import { Champion } from 'types';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class ChampionsService {
   }
 
   getUserById(id: number) {
-    return this.champions.find((champion: any) => champion.id === id);
+    return this.champions.find((champion: Champion) => champion.id === id);
   }
 
   getAllChampions() {
@@ -40,7 +41,7 @@ export class ChampionsService {
     });
   }
 
-  add(champion: any) {
+  add(champion: Champion) {
     return new Observable(obs => {
       this.db.collection('champions').add(champion).then(() => {
         console.log('success');
@@ -49,7 +50,7 @@ export class ChampionsService {
     });
   }
 
-  update(champion: any) {
+  update(champion: Champion) {
     return new Observable(obs => {
       this.db.doc(`champions/${champion.id}`).update(champion);
       obs.next();

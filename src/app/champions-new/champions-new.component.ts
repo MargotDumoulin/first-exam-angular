@@ -1,6 +1,7 @@
 import { ChampionsService } from 'src/services/champions/champions.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Champion } from 'types';
 
 @Component({
   selector: 'app-champions-new',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionsNewComponent implements OnInit {
 
-  champion: any  = {
+  champion: Champion  = {
     name: null,
     age: null,
     passive: null,

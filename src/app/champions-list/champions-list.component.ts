@@ -2,6 +2,7 @@ import { ChampionsService } from 'src/services/champions/champions.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import './champions-list.component.css';
 import { Subscription } from 'rxjs';
+import { Champion } from 'types';
 
 @Component({
   selector: 'app-champions-list',
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class ChampionsListComponent implements OnInit, OnDestroy {
 
-  champions: any = [];
+  champions: Champion[] = [];
   championsSubscription: Subscription;
 
   constructor(private Champions: ChampionsService) { }
