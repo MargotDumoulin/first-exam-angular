@@ -1,0 +1,22 @@
+<app-champions-form [champion]="champion" [errors]="errors"></app-champions-form>
+
+<div class="row">
+  <div class="col-12">
+    <div class="submit">
+      <button class="btn btn-outline-success" (click)="add()">
+        Add
+      </button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="errorsLength > 0">
+    <div class="alert alert-danger mt-5 ml-2">
+      Il y a des erreurs dans votre formulaire.
+    </div>
+  </div>
+
+  <div class="row" *ngIf="confirm">
+    <div class="alert alert-success mt-5 ml-2">
+      L'utilisateur a bien été enregistré, vous allez être redirigé.
+    </div>
+  </div></div>

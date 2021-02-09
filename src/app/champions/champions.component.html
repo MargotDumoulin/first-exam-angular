@@ -1,0 +1,36 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Age</th>
+      <th scope="col">Passive</th>
+      <th scope="col">Skill Q</th>
+      <th scope="col">Skill W</th>
+      <th scope="col">Skill E</th>
+      <th scope="col">Skill R</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let champion of champions">
+      <th scope="row">{{ champion.id }}</th>
+      <td>{{ champion.name }}</td>
+      <td>{{ champion.age }}</td>
+      <td>{{ champion.passive }}</td>
+      <td>{{ champion.skillQ }}</td>
+      <td>{{ champion.skillW }}</td>
+      <td>{{ champion.skillE }}</td>
+      <td>{{ champion.skillR }}</td>
+      <td>
+        <button [routerLink]="['/update', champion.id]" type="button" class="btn btn-info icon-btn">
+          <i class="bi bi-pen"></i>
+        </button>
+        <button type="button" class="btn btn-danger icon-btn mr-2 mt-2" (click)="delete(champion.id)">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

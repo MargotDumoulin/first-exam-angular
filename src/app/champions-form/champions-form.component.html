@@ -1,0 +1,115 @@
+<div class="row champion-form mt-5">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Name</label>
+      <br />
+      <input
+        type="text"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.name === true
+        }"
+        [(ngModel)]="champion.name">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Age</label>
+      <br />
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="champion.age"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.age === true
+        }"
+      >
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Passive</label>
+      <br />
+      <input
+        type="text"
+        class="form-control"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.passive === true
+        }"
+        [(ngModel)]="champion.passive"
+      >
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Skill Q</label>
+      <br />
+      <input
+        type="text"
+        class="form-control"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.skillQ === true
+        }"
+        [(ngModel)]="champion.skillQ">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Skill W</label>
+      <br />
+      <input
+        type="text"
+        class="form-control"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.skillW === true
+        }"
+        [(ngModel)]="champion.skillW">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Skill E</label>
+      <br />
+      <input
+        type="text"
+        class="form-control"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.skillE === true
+        }"
+        [(ngModel)]="champion.skillE"
+      >
+    </div>
+  </div>
+    <div class="col-12 col-sm-6 mb-2">
+      <div class="form-group">
+        <label>Skill R</label>
+        <br />
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="{
+            'form-control': true,
+            'is-invalid': errors.skillR === true
+          }"
+          [(ngModel)]="champion.skillR"
+        >
+      </div>
+    </div>
+  </div>
+
