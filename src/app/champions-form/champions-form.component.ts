@@ -4,7 +4,7 @@ import { Champion } from 'types';
 @Component({
   selector: 'app-champions-form',
   templateUrl: './champions-form.component.html',
-  styleUrls: ['./champions-form.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class ChampionsFormComponent implements OnInit {
 

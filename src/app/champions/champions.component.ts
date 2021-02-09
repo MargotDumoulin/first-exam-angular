@@ -4,7 +4,7 @@ import { ChampionsService } from 'src/services/champions/champions.service';
 @Component({
   selector: 'app-champions',
   templateUrl: './champions.component.html',
-  styleUrls: ['./champions.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class ChampionsComponent implements OnInit {
 

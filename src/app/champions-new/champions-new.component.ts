@@ -6,7 +6,7 @@ import { Champion } from 'types';
 @Component({
   selector: 'app-champions-new',
   templateUrl: './champions-new.component.html',
-  styleUrls: ['./champions-new.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class ChampionsNewComponent implements OnInit {
 
