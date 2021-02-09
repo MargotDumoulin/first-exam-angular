@@ -16,8 +16,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let champion of champions">
-      <th scope="row">{{ champion.id  }}</th>
-      <td><img [src]="champion.image" class="champion-image" /></td>
+      <th scope="row">
+        <span data-toggle="tooltip" title="{{ champion.id }}">
+          {{ truncateIfTooLong(champion.id, 10) }}
+        </span>
+      </th>
+      <td><img [src]="champion.image" class="champion-image" alt="Champion" /></td>
       <td>{{ truncateIfTooLong(champion.name, 20) }}</td>
       <td>{{ champion.age }}</td>
       <td>{{ champion.isWomen ? "Femme" : "Homme" }}</td>
