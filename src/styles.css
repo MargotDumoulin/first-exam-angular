@@ -37,3 +37,10 @@ html {
   align-content: center;
 }
 
+.champion-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+

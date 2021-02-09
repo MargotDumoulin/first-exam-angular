@@ -12,6 +12,7 @@ export class ChampionsNewComponent implements OnInit {
 
   champion: Champion  = {
     name: null,
+    image: null,
     age: null,
     passive: null,
     skillQ: null,
@@ -21,6 +22,7 @@ export class ChampionsNewComponent implements OnInit {
   };
   rules: any = {
     name: (e) => e === null || e === '',
+    image: (e) => e === null || e === '',
     age: (e) => isNaN(e) || e === null || e === '',
     passive: (e) => e === null || e === '',
     skillQ: (e) => e === null || e === '',
@@ -44,6 +46,7 @@ export class ChampionsNewComponent implements OnInit {
       this.Champions.add(this.champion).subscribe(() => {
         this.champion = {
           name: null,
+          image: null,
           age: null,
           passive: null,
           skillQ: null,

@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Image</th>
       <th scope="col">Nom</th>
       <th scope="col">Age</th>
       <th scope="col">Passive</th>
@@ -15,6 +16,7 @@
   <tbody>
     <tr *ngFor="let champion of champions">
       <th scope="row">{{ champion.id }}</th>
+      <td><img [src]="champion.image" class="champion-image" /></td>
       <td>{{ champion.name }}</td>
       <td>{{ champion.age }}</td>
       <td>{{ champion.passive }}</td>

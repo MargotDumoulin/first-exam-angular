@@ -18,7 +18,6 @@
       <br />
       <input
         type="number"
-        class="form-control"
         [(ngModel)]="champion.age"
         [ngClass]="{
           'form-control': true,
@@ -36,12 +35,25 @@
       <br />
       <input
         type="text"
-        class="form-control"
         [ngClass]="{
           'form-control': true,
           'is-invalid': errors.passive === true
         }"
         [(ngModel)]="champion.passive"
+      >
+    </div>
+  </div>
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Image</label>
+      <br />
+      <input
+        type="text"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid': errors.image === true
+        }"
+        [(ngModel)]="champion.image"
       >
     </div>
   </div>
@@ -56,7 +68,6 @@
       <br />
       <input
         type="text"
-        class="form-control"
         [ngClass]="{
           'form-control': true,
           'is-invalid': errors.skillQ === true
@@ -70,7 +81,6 @@
       <br />
       <input
         type="text"
-        class="form-control"
         [ngClass]="{
           'form-control': true,
           'is-invalid': errors.skillW === true
@@ -87,7 +97,6 @@
       <br />
       <input
         type="text"
-        class="form-control"
         [ngClass]="{
           'form-control': true,
           'is-invalid': errors.skillE === true
@@ -102,7 +111,6 @@
         <br />
         <input
           type="text"
-          class="form-control"
           [ngClass]="{
             'form-control': true,
             'is-invalid': errors.skillR === true

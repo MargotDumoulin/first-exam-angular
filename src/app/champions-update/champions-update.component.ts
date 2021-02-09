@@ -17,6 +17,7 @@ export class ChampionsUpdateComponent implements OnInit {
   change: boolean;
   rules: any = {
     age: (e) => isNaN(e) || e === null || e === '',
+    image: (e) => e === null || e === '',
     passive: (e) => e === null || e === '',
     name: (e) => e === null || e === '',
     skillQ: (e) => e === null || e === '',

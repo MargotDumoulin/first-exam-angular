@@ -1,5 +1,6 @@
 export type Champion = {
   id?: number;
+  image: string;
   name: string;
   age: number;
   skillQ: string;
