@@ -31,7 +31,7 @@ export class ChampionsUpdateComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
-    this.champion = this.Champions.getUserById(id);
+    this.champion = { ...this.Champions.getUserById(id) };
   }
 
   update() {
