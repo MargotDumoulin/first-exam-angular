@@ -44,17 +44,29 @@
     </div>
   </div>
   <div class="col-12 col-sm-6">
-    <div class="form-group">
-      <label>Image</label>
-      <br />
-      <input
-        type="text"
-        [ngClass]="{
-          'form-control': true,
-          'is-invalid': errors.image === true
-        }"
-        [(ngModel)]="champion.image"
-      >
+    <div class="row">
+      <div class="col-2 mt-4 pr-0">
+        <img [src]="
+          champion.image
+          ? champion.image
+          : 'https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg'"
+          class="champion-image"
+        />
+      </div>
+      <div class="col-10 pl-0">
+        <div class="form-group">
+          <label>Image</label>
+          <br />
+          <input
+            type="text"
+            [ngClass]="{
+              'form-control': true,
+              'is-invalid': errors.image === true
+            }"
+            [(ngModel)]="champion.image"
+          >
+        </div>
+      </div>
     </div>
   </div>
 </div>
