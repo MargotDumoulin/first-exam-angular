@@ -10,6 +10,18 @@ import { Champion } from 'types';
 export class ChampionsService {
 
   private champions: any;
+  private validationRules: any = {
+    age: (e) => isNaN(e) || e === null || e === '' || e < 0,
+    image: (e) => e === null || e === '',
+    isWomen: (e) => e === null || e === undefined,
+    passive: (e) => e === null || e === '',
+    name: (e) => e === null || e === '',
+    skillQ: (e) => e === null || e === '',
+    skillW: (e) => e === null || e === '',
+    skillE: (e) => e === null || e === '',
+    skillR: (e) => e === null || e === '',
+    id: () => false // skip id validation :p
+  };
 
   championsSubject: Subject<any[]> = new Subject<any[]>();
 
@@ -39,6 +51,10 @@ export class ChampionsService {
       this.champions = res.map((champion: any) => ({ ...champion.data, id: champion.id }));
       this.emitChampionsSubject();
     });
+  }
+
+  getValidationRules() {
+    return this.validationRules;
   }
 
   add(champion: Champion) {

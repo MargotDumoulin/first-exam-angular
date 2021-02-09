@@ -10,28 +10,19 @@ import { Champion } from 'types';
 })
 export class ChampionsUpdateComponent implements OnInit {
 
+  validationRules: any = {};
   errors: any = {};
   errorsLength = 0;
   champion: Champion;
   id: number;
   change: boolean;
-  rules: any = {
-    age: (e) => isNaN(e) || e === null || e === '',
-    image: (e) => e === null || e === '',
-    passive: (e) => e === null || e === '',
-    name: (e) => e === null || e === '',
-    skillQ: (e) => e === null || e === '',
-    skillW: (e) => e === null || e === '',
-    skillE: (e) => e === null || e === '',
-    skillR: (e) => e === null || e === '',
-    id: () => false // skip id validation :p
-  };
 
   constructor(private Champions: ChampionsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.champion = { ...this.Champions.getUserById(id) };
+    this.validationRules = this.Champions.getValidationRules();
   }
 
   update() {
@@ -51,7 +42,7 @@ export class ChampionsUpdateComponent implements OnInit {
   validateFields() {
     const champion = Object.entries(this.champion);
     champion.forEach(field => {
-      if (this.rules[field[0]](field[1])) {
+      if (this.validationRules[field[0]](field[1])) {
         this.errors[field[0]] = true;
       } else {
         delete this.errors[field[0]];

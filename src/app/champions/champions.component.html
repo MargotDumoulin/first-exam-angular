@@ -5,7 +5,8 @@
       <th scope="col">Image</th>
       <th scope="col">Nom</th>
       <th scope="col">Age</th>
-      <th scope="col">Passive</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Passif</th>
       <th scope="col">Skill Q</th>
       <th scope="col">Skill W</th>
       <th scope="col">Skill E</th>
@@ -19,6 +20,7 @@
       <td><img [src]="champion.image" class="champion-image" /></td>
       <td>{{ champion.name }}</td>
       <td>{{ champion.age }}</td>
+      <td>{{ champion.isWomen ? "Femme" : "Homme" }}</td>
       <td>{{ champion.passive }}</td>
       <td>{{ champion.skillQ }}</td>
       <td>{{ champion.skillW }}</td>

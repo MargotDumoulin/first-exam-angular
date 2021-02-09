@@ -1,7 +1,7 @@
 <div class="row champion-form mt-5">
   <div class="col-12 col-sm-6">
     <div class="form-group">
-      <label>Name</label>
+      <label>Nom</label>
       <br />
       <input
         type="text"
@@ -31,7 +31,7 @@
 <div class="row">
   <div class="col-12 col-sm-6">
     <div class="form-group">
-      <label>Passive</label>
+      <label>Passif</label>
       <br />
       <input
         type="text"
@@ -55,6 +55,29 @@
         }"
         [(ngModel)]="champion.image"
       >
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="form-group">
+      <label>Genre</label>
+      <p *ngIf="errors.isWomen" class="text-danger">Vous devez sélectionner un genre.</p>
+      <div class="col-12 row">
+        <div class="col-6">
+          <div class="form-check">
+            <input type="radio" name="woman" class="form-check-input" [value]="true" [(ngModel)]="champion.isWomen">
+            <label class="form-check-label">Femme</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input type="radio" name="man" class="form-check-input" [value]="false" [(ngModel)]="champion.isWomen">
+            <label class="form-check-label">Homme</label>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

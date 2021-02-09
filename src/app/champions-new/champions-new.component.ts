@@ -10,7 +10,9 @@ import { Champion } from 'types';
 })
 export class ChampionsNewComponent implements OnInit {
 
+  validationRules: any = {};
   champion: Champion  = {
+    isWomen: null,
     name: null,
     image: null,
     age: null,
@@ -20,16 +22,6 @@ export class ChampionsNewComponent implements OnInit {
     skillE: null,
     skillR: null
   };
-  rules: any = {
-    name: (e) => e === null || e === '',
-    image: (e) => e === null || e === '',
-    age: (e) => isNaN(e) || e === null || e === '',
-    passive: (e) => e === null || e === '',
-    skillQ: (e) => e === null || e === '',
-    skillW: (e) => e === null || e === '',
-    skillE: (e) => e === null || e === '',
-    skillR: (e) => e === null || e === ''
-  };
   errors: any = {};
   errorsLength = 0;
   confirm: boolean;
@@ -37,6 +29,7 @@ export class ChampionsNewComponent implements OnInit {
   constructor(private Champions: ChampionsService, private router: Router) { }
 
   ngOnInit() {
+    this.validationRules = this.Champions.getValidationRules();
   }
 
   add() {
@@ -45,6 +38,7 @@ export class ChampionsNewComponent implements OnInit {
     if (this.errorsLength <= 0) {
       this.Champions.add(this.champion).subscribe(() => {
         this.champion = {
+          isWomen: null,
           name: null,
           image: null,
           age: null,
@@ -67,7 +61,7 @@ export class ChampionsNewComponent implements OnInit {
   validateFields() {
     const champion = Object.entries(this.champion);
     champion.forEach(field => {
-      if (this.rules[field[0]](field[1])) {
+      if (this.validationRules[field[0]](field[1])) {
         this.errors[field[0]] = true;
       } else {
         delete this.errors[field[0]];
